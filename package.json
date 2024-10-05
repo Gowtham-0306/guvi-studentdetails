@@ -10,6 +10,11 @@
   "author": "gow",
   "license": "MIT",
   "dependencies": {
-    "nodemon": "^3.1.7"
+    "express": "^4.21.0",       // Add Express
+    "body-parser": "^1.20.3",   // Include body-parser if needed
+    "cors": "^2.8.5",           // Include CORS if needed
+    "dotenv": "^16.4.5",        // Include dotenv for environment variables
+    "mongoose": "^8.7.0",       // Include mongoose if using MongoDB
+    "nodemon": "^3.1.7"         // Nodemon for development
   }
 }
