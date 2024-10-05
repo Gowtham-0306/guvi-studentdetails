@@ -35,9 +35,7 @@ httpserver.post("/add" , (req , res)=>{
 httpserver.post("/addstudentdetails" , (req , res)=>{
 
   const newstudentdetails = new studentdetailsmodel(req.body);
- console.log(req.body);
- console.log(`niew`);
- console.log(newstudentdetails);
+
  try{
  
    if(newstudentdetails){
@@ -66,6 +64,44 @@ httpserver.post("/addstudentdetails" , (req , res)=>{
                    });
 
       
+
+                   httpserver.get("/getstudentdetails", (req, res, next) => {
+                    studentdetailsmodel.find().then((response) => {
+                  
+                        if (response) {
+                  
+                            if (response.length > 0) {
+                  
+                                res.status(200).json({
+                                    "studentdetails": response 
+                                })
+                            } else {
+                                res.status(200).json({
+                                    "response": " studentdetails not found"
+                                })
+                            }
+                  
+                  
+                  
+                        }
+                    }).catch((err) => {
+                        {
+                  
+                            res.status(500).json({
+                                "message": "internal server error"
+                            })
+                  
+                        }
+                    })
+                  
+                  
+                  
+                  
+                  });
+                  
+
+
+
 
 
 // starts a simple http server locally on port 3000
