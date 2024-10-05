@@ -8,5 +8,8 @@
     "start": "nodemon index.js"
   },
   "author": "gow",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
 }
